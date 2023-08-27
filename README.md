@@ -557,3 +557,154 @@
   > y 
   // 0
   ```
+
+## Aula 3
+
+* TIPOS 
+  - tipoas primitivos
+    number, string, boolean, null e undefined
+
+  - tipos objeto
+    todos os outros
+
+  Objeto é um conjunto de propriedades;
+
+    ```js
+      var pessoa =  { nome: 'Alexandre', idade: 28, peso: 82, altura: 1.69};
+      pessoa.idade // 28
+      pessoa 
+      <!-- { 
+        nome: 'Alexandre', 
+        idade: 28, 
+        peso: 82, 
+        altura: 1.69
+      } -->
+
+      var carro = { cor: 'preto', motor: '2.0', portas: 4 }
+      carro.cor // 'preto'
+
+      var myvar = function() { return 'variavel myvar'; } // função anonima;
+      myvar // [Function: myvar]
+      myvar() // 'variavel myvar'
+    ```
+    
+  Métodos - Funções como valor 
+
+    ```js
+      var pessoa = {nome: 'Alexandre', idade: 28, altura: 1.69, peso: 83};
+      // undefined
+
+      pessoa
+      // { nome: 'Alexandre', idade: 28, altura: 1.69, peso: 83 }
+
+      pessoa.sexo = 'masculino';
+      // 'masculino'
+
+      pessoa
+      <!-- {
+        nome: 'Alexandre',
+        idade: 28,
+        altura: 1.69,
+        peso: 83,
+        sexo: 'masculino'
+      } -->
+
+      pessoa.cor = 'moreno';
+      // 'moreno'
+
+       pessoa
+      <!-- {
+        nome: 'Alexandre',
+        idade: 28,
+        altura: 1.69,
+        peso: 83,
+        sexo: 'masculino',
+        cor: 'moreno'
+      } -->
+
+      pessoa.andar = function(){ return 'Pessoa andando' };
+      // [Function (anonymous)]
+
+      pessoa
+      <!-- {
+        nome: 'Alexandre',
+        idade: 28,
+        altura: 1.69,
+        peso: 83,
+        sexo: 'masculino',
+        cor: 'moreno',
+        andar: [Function (anonymous)]
+      } -->
+      pessoa.andar()
+      // 'Pessoa andando'
+      
+      pessoa.idade
+      // 28
+      
+      pessoa.aniversario = function(){ pessoa.idade++ };
+      // [Function (anonymous)]
+      
+      pessoa.idade
+      // 28
+      
+      pessoa.aniversario();
+      // undefined
+      
+      pessoa
+      <!-- {
+        nome: 'Alexandre',
+        idade: 29,
+        altura: 1.69,
+        peso: 83,
+        sexo: 'masculino',
+        cor: 'moreno',
+        andar: [Function (anonymous)],
+        aniversario: [Function (anonymous)]
+      } -->
+      // idade alterada incrementando um valor +
+
+      pessoa.sobrenome = 'Soares';
+      // 'Soares'
+
+      pessoa
+      <!-- {
+        nome: 'Alexandre',
+        idade: 29,
+        altura: 1.69,
+        peso: 83,
+        sexo: 'masculino',
+        cor: 'moreno',
+        andar: [Function (anonymous)],
+        aniversario: [Function (anonymous)],
+        sobrenome: 'Soares'
+      } -->
+
+      pessoa.nomeCompleto = function() { return pessoa.nome + ' ' + pessoa.sobrenome };
+      // [Function (anonymous)]
+
+      pessoa.nomeCompleto()
+      // 'Alexandre Soares'
+    ```
+
+    ```js
+      pessoa
+      <!-- {
+        nome: 'Alexandre',
+        idade: 29,
+        altura: 1.69,
+        peso: 83,
+        sexo: 'masculino',
+        cor: 'moreno',
+        andar: [Function (anonymous)],
+        aniversario: [Function (anonymous)]
+      } -->
+
+      pessoa.nome // propriedade
+
+      pessoa.andar() // um método
+
+      // Quando você utiliza uma váriavel dentro de um objeto ele é utilizado como propriedade;
+      // Quando você utilizar uma function dentro de um objeto ele é utilizado como método;
+
+    ```
+
