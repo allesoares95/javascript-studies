@@ -708,3 +708,104 @@
 
     ```
 
+## Aula 4
+
+* Truthy e Falsy 
+  Truthy = todos valores booleanos que é representado por true
+  Falsy = todos valores booleanos que é representado por false
+
+  Falsy
+    False, Undefined, null, NaN, 0, -0, "", ''
+
+    if( '' ) { teste = true; } else { teste = false; }  // false
+    if( false ) { teste = true; } else { teste = false; }  // false
+
+  Truthy
+    Todos os outros
+
+  if( {} ) { teste = true; } else { teste = false; }  // true
+  if( true ) { teste = true; } else { teste = false; }  // true
+  
+
+  Descobrir a representação booleana: !!
+    !true // false
+    !1    // false
+    !! true   // true
+    !!0   // false
+
+    inverte 2x !
+
+* Condicional ternário
+  condição ? true : false; que substitui o if
+
+  ```js
+    1 === 2 ? true : false; // false
+    1 === 1 ? true : false; // true
+    if( 1 === 2) {
+      true
+    } else { 
+      false
+    }
+
+    var sexo = 'o';
+    if ( pessoa.sexo === 'Feminino') {
+      sexo = 'a'
+    }
+    var sexo = pessoa.sexo === 'Feminino' ? 'a' : 'o';
+
+    1 ? true ; false;
+    var carro = 'string' : 'nome carro' : 'placa do carro';
+    var moto = false ? 'nome moto' : 'moto não existe';
+  ```
+
+* Escopo de variáveis;
+  Global e Local
+  
+  Function cria escopo local;
+
+  Global
+    ```js
+      var myvar = 1;
+      myvar // 1
+
+      functionj myFunction(){
+        return myvar;
+      }
+      myFunction();   // 1
+    ```
+
+  Local
+  ```js
+    function otherFunction(){
+      var otherVar = true;
+      return otherVar
+    };
+
+    otherfunction();    // true
+    otherVar;    // otherVar is not defined 
+  ```
+
+  Importante sempre usar var para criação de variavel;
+
+  ```js
+    function newFunction(){
+      newVar = 'variavel global';
+      return newVar;
+    };
+
+    newVar;   // is not defined
+    newFunction();  // 'variavel global'
+    newVar;   // 'variavel global'
+  ```
+
+  ```js
+    function outraFuncao(a, b, c){
+      return a;
+    };
+
+    outraFuncao(1); // a
+    outraFuncao(1, 2); // a
+    a   // a is not defined
+  ```
+
+
