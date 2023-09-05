@@ -768,7 +768,7 @@
       var myvar = 1;
       myvar // 1
 
-      functionj myFunction(){
+      function myFunction(){
         return myvar;
       }
       myFunction();   // 1
