@@ -808,4 +808,80 @@
     a   // a is not defined
   ```
 
+## Aula 5
 
+* Funções
+
+  Retorno de funções pode ter arrays [] e objetos {};
+
+  ```js
+    function test(){
+      return {
+        prop1: 1,
+        prop2: 'alexandre',
+        prop3: function(){
+          return 'prop3';
+        }
+      };
+    };
+
+    test();   // { prop1: 1, prop2: 'alexandre', prop3: [Function: prop3] }
+
+    var values = test();
+    values          // { prop1: 1, prop2: 'alexandre', prop3: [Function: prop3] }
+    values.prop2    // 'alexandre'
+    values.prop3    // [Function: prop3]
+    values.prop3();  // 'prop3'
+  ```
+
+* Parâmetros de funções;
+  Arrays []
+
+  ```js
+  var arr = [1, 2, 3];
+
+  function myFun(arg){
+    return arg;
+  };
+  myFun();   //undefined
+  myFun(arr);   // [ 1, 2, 3 ]
+
+
+  function myFun2(arg){
+    return arg[1];
+  };
+  myFun2(arr);    // 2
+
+  myFunction2([1, 3, 5, 7, 9]);
+
+  myFun(['Alexandre', 1, true, 28]);   
+  ```
+
+  Object {}
+
+  ```js
+    var obj = {
+      objetivo: 'curso',
+      aprendizado: 'JavaScript Ninja',
+      ninja: true
+    };
+
+    obj   // { objetivo: 'curso', aprendizado: 'JavaScript Ninja', ninja: true }
+
+    function testFunction(arg){
+      return arg;
+    };
+
+    testFunction(1);    // 1
+
+    testFunction(obj);    // { objetivo: 'curso', aprendizado: 'JavaScript Ninja', ninja: true }
+
+    testFunction(obj).ninja   // true
+
+    function testFunction2(arg){
+      return arg.aprendizado;
+    };
+
+    testFunction2(obj);   //'JavaScript Ninja'
+    obj.aprendizado   //'JavaScript Ninja'
+  ```
