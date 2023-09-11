@@ -885,3 +885,63 @@
     testFunction2(obj);   //'JavaScript Ninja'
     obj.aprendizado   //'JavaScript Ninja'
   ```
+
+# Aula 6
+
+* Operador virgula
+  ```js
+    var a, b = 2, c;
+
+    function myFunc(){
+      var x = 0;
+      return (x += 1, x);
+      // return ++x;
+    };
+
+    myFunc();   // 1
+  ```
+
+* Estruturas condicional
+  Switch
+    ```js
+      function myFunc(x) {
+        switch(x) {
+          case 1:
+            console.log('x é 1');
+            break;
+          case 2:
+            console.log('x é 2');
+          default:
+            console.log('x não é nem 1 nem 2');
+        }
+      };
+    ```
+
+* Estruturas de repetição(LOOP)
+  While
+    ```js
+      var test = 0;
+
+      while(test < 10) {
+        console.log(test);
+        test++;
+      };
+
+      // se test for menor que 10 imprima test e adicione 1 até a estrutura ser o valor de 10;
+    ```
+
+    ```js
+      while(0){
+        console.log('zero');
+      };
+
+      // undefined
+    ```
+
+    ```js
+      var counter = 10;
+
+      while(counter > 0){
+        console.log(counter--)
+      }
+    ```
